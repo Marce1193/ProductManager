@@ -3,18 +3,18 @@ class ProductManager {
         this.products = []
     }
 
-    addProduct = (title, description, price, thumbnail, code, stock) => {
-        const products = {
+    addProduct = (title, description, price, thumbnail, code, stock,) => {
+        const product = {
             title,
             description,
             price,
             thumbnail,
             code,
-            stock: stock ?? 1
+            stock: stock ?? 1,
             id: this.products.length + 1,
         }
 
-        this.products.push(products)
+        this.products.push(product)
     }
 
     getProducts = () => {
@@ -23,12 +23,14 @@ class ProductManager {
     }
 
     getProductById = (productId) => {
-       this.products.findIndex(())
+      const productIndex = this.products.findIndex((product) => product.id === productsId)
+
+      if(productIndex === -1) {
+        console.log("Not found")
+        return
+      }
     }
 }
 
 const productManager = new ProductManager()
 
-productManager.addProduct("conjunto", "lenceria mujer", 1500,)
-productManager.addProduct("termo", "hermoso termo", 1500, 10)
-productManager.getProducts()
