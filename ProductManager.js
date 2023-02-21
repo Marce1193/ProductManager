@@ -23,14 +23,13 @@ class ProductManager {
     }
 
     getProductById = (productId) => {
-      const productIndex = this.products.findIndex((product) => product.id === productsId)
-
-      if(productIndex === -1) {
-        console.log("Not found")
-        return
-      }
+        let prod = this.products.find(prod => prod.id === productId)
+        if (prod) {
+            console.log(prod)
+        } else {
+            console.log("not found")
+        }
     }
-}
+    }
 
 const productManager = new ProductManager()
-
